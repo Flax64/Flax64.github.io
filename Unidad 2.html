@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Unidad 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style_unidades.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Share+Tech&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Cal+Sans&family=Share+Tech&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Cal+Sans&family=Share+Tech&family=Tagesschrift&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Unidad 2</h1>
+    </header>
+    <main>
+        <article>
+            <h2>Organización del procesador</h2>
+            <p>
+                La organización del procesador se refiere a la forma en que los diferentes componentes internos de la
+                Unidad Central de Procesamiento (CPU) están interconectados y cómo trabajan en conjunto para ejecutar
+                las instrucciones de un programa.
+            </p>
+            <h3>Componentes Principales</h3>
+            <p>
+                <b>Unidad Aritmética Lógica (ALU):</b> Es el "cerebro" matemático y lógico del procesador. Realiza
+                operaciones aritméticas (suma, resta, multiplicación, división) y operaciones lógicas (AND, OR, NOT,
+                XOR) con los
+                datos.
+                <br>
+                <b>Unidad de Control (CU):</b> Actúa como el director de orquesta del procesador. Interpreta las
+                instrucciones de la memoria, genera señales de control para coordinar las acciones de los demás
+                componentes (como la ALU, los registros y la memoria), y asegura que las instrucciones se ejecuten en la
+                secuencia correcta.
+                <br>
+                <b>Registros:</b> Son pequeñas áreas de almacenamiento de alta velocidad dentro del procesador. Se
+                utilizan para guardar temporalmente datos, direcciones de memoria o información de control que la CPU
+                necesita acceder rápidamente durante la ejecución de las instrucciones. Los diferentes tipos de
+                registros (que veremos en el siguiente punto) cumplen funciones específicas.
+                <br>
+                <b>Caché:</b> Es una memoria de alta velocidad más pequeña que la memoria principal (RAM) pero más
+                rápida. Almacena copias de los datos e instrucciones que se utilizan con más frecuencia, lo que permite
+                al procesador acceder a ellos más rápidamente y mejorar el rendimiento general del sistema. Hay varios
+                niveles de caché (L1, L2, L3), con diferentes tamaños y velocidades.
+                <br>
+                <b>Buses Internos:</b> Son las vías de comunicación dentro del procesador que permiten la transferencia
+                de datos, direcciones y señales de control entre los diferentes componentes.
+            </p>
+            <h3>Interconexión de Componentes</h3>
+            <p>
+                La forma en que estos componentes están interconectados es crucial para el funcionamiento del
+                procesador. Generalmente, se utilizan buses para comunicar los datos, las direcciones de memoria y las
+                señales de control.
+                <br><br>
+                <b>Bus de Datos:</b> Transporta los datos entre los diferentes componentes.
+                <br>
+                <b>Bus de Direcciones:</b> Especifica la ubicación de la memoria o del puerto de E/S al que se está
+                accediendo.
+                <br>
+                <b>Bus de Control:</b> Lleva las señales de control desde la Unidad de Control a los otros componentes
+                para coordinar sus acciones.
+            </p>
+            <hr>
+            <h2>Estructura de registros</h2>
+            <p>
+                Los registros son una parte esencial de la arquitectura del procesador. Son pequeñas ubicaciones de
+                almacenamiento de alta velocidad directamente accesibles por la ALU y la Unidad de Control. Su función
+                principal es mantener temporalmente los datos y la información de control que el procesador necesita
+                para ejecutar las instrucciones de manera eficiente.
+                <br><br>
+                La estructura de registros se puede categorizar principalmente en dos tipos.
+            </p>
+            <h3>Registros visibles para el usuario</h3>
+            <p>
+                Estos son los registros a los que los programadores pueden acceder directamente a través del lenguaje
+                ensamblador (o indirectamente a través de lenguajes de alto nivel mediante el compilador). Se utilizan
+                para una variedad de propósitos generales y específicos definidos por la arquitectura del conjunto de
+                instrucciones (ISA) del procesador. Algunos ejemplos comunes incluyen:
+            <ul>
+                <li>
+                    <b>Registros de Propósito General (GPRs):</b> Se utilizan para almacenar operandos (datos de entrada
+                    y
+                    salida) de las operaciones aritméticas y lógicas. Los programadores tienen flexibilidad para
+                    utilizarlos según sus necesidades. La cantidad de GPRs varía significativamente entre diferentes
+                    arquitecturas de procesadores (por ejemplo, algunas arquitecturas pueden tener 8, 16, 32 o incluso
+                    más).
+                </li>
+                <li>
+                    <b>Registros de Datos:</b> Algunos procesadores tienen registros específicamente designados para
+                    contener
+                    datos numéricos (enteros, coma flotante).
+                </li>
+                <li>
+                    <b>Registros de Direcciones:</b> Se utilizan para almacenar direcciones de memoria. Esto incluye:
+                    <ul>
+                        <li>
+                            <i>Puntero de Pila (Stack Pointer - SP):</i> Mantiene la dirección de la cima de la pila,
+                            una
+                            estructura de datos utilizada para almacenar información temporal como direcciones de
+                            retorno de funciones y variables locales.
+                        </li>
+                        <li>
+                            <i>Puntero de Base (Base Pointer - BP) o Puntero de Marco (Frame Pointer - FP):</i> Se
+                            utiliza para referenciar las variables locales dentro de un marco de pila de una función.
+                        </li>
+                        <li>
+                            <i>Registro Índice:</i> Se utiliza en conjunto con una dirección base para calcular la
+                            dirección
+                            efectiva de un operando en la memoria (útil para acceder a elementos de arrays o
+                            tablas).
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Registros de Segmento:</b> En arquitecturas segmentadas (menos comunes en procesadores modernos
+                    de escritorio), estos registros almacenan las direcciones base de diferentes segmentos de memoria
+                    (código, datos, pila).
+                </li>
+            </ul>
+            </p>
+            <h3>Registros de control y de estados</h3>
+            <p>
+                Estos registros son utilizados por la Unidad de Control para controlar el funcionamiento del procesador
+                y almacenar información sobre el estado actual del sistema y los resultados de las operaciones.
+                Generalmente no son directamente manipulados por los programas de usuario (aunque pueden ser accedidos
+                indirectamente a través de llamadas al sistema). Algunos ejemplos importantes son:
+            <ul>
+                <li>
+                    <b>Contador de Programa (Program Counter - PC) o Puntero de Instrucción (Instruction Pointer -
+                        IP):</b> Contiene la dirección de la siguiente instrucción que se va a ejecutar. La Unidad de
+                    Control actualiza este registro después de que se busca una instrucción (fetch) o como resultado de
+                    una instrucción de salto o bifurcación.
+                </li>
+                <li>
+                    <b>Registro de Instrucción (Instruction Register - IR):</b> Almacena temporalmente la instrucción
+                    que se acaba de buscar de la memoria y está siendo decodificada y ejecutada.
+                </li>
+                <li>
+                    <b>Registro de Estado (Status Register) o Registro de Banderas (Flags Register):</b> Contiene bits
+                    individuales (flags) que indican el resultado de la última operación aritmética o lógica. Los
+                    flags comunes incluyen:
+                    <ul>
+                        <li>
+                            <i>Bandera de Cero (Zero Flag - Z):</i> Se activa si el resultado de la última operación fue
+                            cero.
+                        </li>
+                        <li>
+                            <i>Bandera de Signo (Sign Flag - S):</i> Indica el signo del resultado de la última
+                            operación (generalmente el bit más significativo).
+                        </li>
+                        <li>
+                            <i>Bandera de Desbordamiento (Overflow Flag - O):</i> Indica si hubo un desbordamiento
+                            aritmético (el resultado fue demasiado grande o demasiado pequeño para ser representado
+                            en el registro).
+                        </li>
+                        <li>
+                            <i>Bandera de Acarreo (Carry Flag - C):</i> Indica si hubo un acarreo o préstamo en la
+                            última operación aritmética.
+                        </li>
+                        <li>
+                            <i>Bandera de Paridad (Parity Flag - P):</i> Indica si el número de bits '1' en el resultado
+                            es par o impar.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Registro de Puntero de Interrupción:</b> Almacena la dirección del vector de interrupciones, una
+                    tabla que contiene las direcciones de las rutinas de servicio de interrupciones.
+                </li>
+                <li>
+                    <b>Registros de Control de Memoria (por ejemplo, registros de la Unidad de Gestión de Memoria -
+                        MMU):</b> Se utilizan para gestionar la memoria virtual, la protección de la memoria y la
+                    traducción de direcciones virtuales a físicas.
+                </li>
+            </ul>
+            </p>
+            <h3>Ejemplos de registros de CPU reales</h3>
+            <p>
+            <h4>Arquitectura x86 (Intel/AMD)</h4>
+            <ul>
+                <li>
+                    <i>Registros de Propósito General:</i> EAX, EBX, ECX, EDX (de 32 bits), y sus extensiones de
+                    64 bits RAX, RBX, RCX, RDX. También existen registros como ESI, EDI, ESP, EBP (y sus
+                    equivalentes de 64 bits) que tienen usos convencionales para indexación, puntero de pila y
+                    puntero de base.
+                </li>
+                <li>
+                    <i>Registro de Instrucción:</i> Invisible directamente para el programador.
+                </li>
+                <li>
+                    <i>Contador de Programa:</i> EIP (32 bits) y RIP (64 bits).
+                </li>
+                <li>
+                    <i>Registro de Estado:</i> EFLAGS (32 bits) y RFLAGS (64 bits), que contienen las banderas
+                    de estado y control.
+                </li>
+                <li>
+                    <i>Registros de Segmento:</i> CS, DS, SS, ES, FS, GS (aunque su uso es menos común en modo
+                    protegido de 64 bits).
+                </li>
+            </ul>
+            </p>
+            <hr>
+            <h2>El ciclo de instrucción</h2>
+            <p>
+                El ciclo de instrucción, también conocido como ciclo fetch-decode-execute, es el proceso fundamental
+                mediante el cual la Unidad Central de Procesamiento (CPU) ejecuta las instrucciones de un programa
+                almacenado en la memoria. Cada instrucción en un programa sigue este ciclo básico para ser procesada.
+            </p>
+            <h3>Ciclo Fetch-Decode-Execute</h3>
+            <p>
+                Este es el núcleo del ciclo de instrucción y consta de las siguientes etapas principales:
+            <h4>Fetch (Búsqueda)</h4>
+            <ul>
+                <li>
+                    La CPU busca la siguiente instrucción que debe ser ejecutada desde la memoria principal (RAM).
+                </li>
+                <li>
+                    La dirección de la siguiente instrucción a buscar está contenida en el Contador de Programa (PC).
+                </li>
+                <li>
+                    El valor del PC se envía a la memoria a través del bus de direcciones.
+                </li>
+                <li>
+                    La memoria recupera la instrucción ubicada en esa dirección y la envía de vuelta a la CPU a través
+                    del bus de datos.
+                </li>
+                <li>
+                    La instrucción se almacena temporalmente en el Registro de Instrucción (IR).
+                </li>
+                <li>
+                    El Contador de Programa (PC) generalmente se incrementa en este punto para apuntar a la siguiente
+                    instrucción en secuencia.
+                </li>
+            </ul>
+            <h4>Decode (Decodificación)</h4>
+            <ul>
+                <li>
+                    La Unidad de Control (CU) analiza la instrucción que se encuentra en el Registro de Instrucción
+                    (IR).
+                </li>
+                <li>
+                    Durante la decodificación, la CU determina:
+                    <ul>
+                        <li>
+                            La operación que se debe realizar (por ejemplo, suma, resta, carga de datos).
+                        </li>
+                        <li>
+                            Los operandos involucrados (los datos que se utilizarán en la operación). Estos operandos
+                            pueden estar en registros, en la memoria o ser valores inmediatos dentro de la propia
+                            instrucción.
+                        </li>
+                        <li>
+                            El modo de direccionamiento utilizado para acceder a los operandos en la memoria (si es
+                            necesario).
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    La CU genera las señales de control necesarias para que los otros componentes de la CPU (como la ALU
+                    y los registros) realicen la operación especificada.
+                </li>
+            </ul>
+            <h4>Execute (Ejecución)</h4>
+            <ul>
+                <li>
+                    La Unidad de Control dirige a la Unidad Aritmética Lógica (ALU) para que realice la operación
+                    especificada en la instrucción decodificada.
+                </li>
+                <li>
+                    Si la instrucción implica una operación aritmética o lógica, la ALU toma los operandos necesarios de
+                    los registros o la memoria y realiza el cálculo.
+                </li>
+                <li>
+                    Si la instrucción implica una transferencia de datos (por ejemplo, cargar datos de la memoria a un
+                    registro o almacenar datos de un registro en la memoria), se activan los buses y la unidad de
+                    memoria para realizar la transferencia.
+                </li>
+                <li>
+                    Los resultados de la ejecución se almacenan generalmente en un registro o en la memoria.
+                </li>
+                <li>
+                    El Registro de Estado (Flags Register) puede ser actualizado por la ALU para reflejar el resultado
+                    de la operación (por ejemplo, si el resultado fue cero, negativo, o si hubo un desbordamiento).
+                </li>
+            </ul>
+            Después de la fase de ejecución, el ciclo se repite, comenzando con la búsqueda de la siguiente instrucción
+            apuntada por el Contador de Programa (PC). Este ciclo continúa hasta que se ejecuta una instrucción de
+            "alto" o hasta que se interrumpe el programa.
+            </p>
+            <h3> Segmentación de instrucciones (Instruction Pipelining)</h3>
+            <p>
+                La segmentación es una técnica para mejorar el rendimiento del procesador. En lugar de esperar a que una
+                instrucción complete todo el ciclo Fetch-Decode-Execute antes de comenzar con la siguiente, la
+                segmentación permite que múltiples instrucciones se encuentren en diferentes etapas del ciclo
+                simultáneamente.
+                <br>
+                Imagina una línea de ensamblaje donde cada estación realiza una tarea específica. De manera similar, en
+                un pipeline de instrucciones, la ejecución de una instrucción se divide en varias etapas secuenciales
+                (por ejemplo, Fetch, Decode, Execute, Memory Access, Write Back). Mientras una instrucción está en la
+                etapa de "Decode", la siguiente instrucción puede estar en la etapa de "Fetch", y la instrucción
+                anterior puede estar en la etapa de "Execute".
+                <br>
+                Esto permite que se complete una instrucción por ciclo de reloj (idealmente), lo que aumenta
+                significativamente el rendimiento general del procesador (throughput). Sin embargo, la segmentación
+                introduce desafíos como los riesgos de datos (cuando una instrucción necesita un resultado que aún no ha
+                sido calculado por una instrucción anterior en el pipeline) y los riesgos de control (cuando una
+                instrucción de salto o bifurcación cambia el flujo de ejecución).
+            </p>
+            <h3>Conjunto de instrucciones (Instruction Set Architecture - ISA)</h3>
+            <p>
+                El conjunto de instrucciones (ISA) define todas las instrucciones que un procesador puede entender y
+                ejecutar. Incluye:
+            <h4>Características</h4>
+            <ul>
+                <li>
+                    <b>Tipos de instrucciones:</b> Aritméticas, lógicas, de transferencia de datos
+                    (carga/almacenamiento), de
+                    control de flujo (saltos, bifurcaciones, llamadas a subrutinas), de entrada/salida, etc.
+                </li>
+                <li>
+                    <b>Formatos de instrucción:</b> La estructura de una instrucción, incluyendo el código de operación
+                    (opcode) que especifica la operación a realizar y los campos para los operandos (registros,
+                    direcciones de memoria, valores inmediatos). Los formatos pueden variar en longitud y la forma en
+                    que especifican los operandos.
+                </li>
+                <li>
+                    <b>Tipos de datos soportados:</b> Los formatos de los datos que el procesador puede manipular
+                    (enteros de
+                    diferentes tamaños, números de coma flotante, caracteres, etc.).
+                </li>
+                <li>
+                    <b>Modos de direccionamiento:</b> Las diferentes formas en que se pueden especificar las direcciones
+                    de los
+                    operandos en la memoria (lo veremos en el siguiente punto).
+                </li>
+                <li>
+                    <b>Número de operandos por instrucción:</b> Algunas arquitecturas tienen instrucciones de cero, uno,
+                    dos o tres operandos.
+                </li>
+            </ul>
+            <h4>Funciones</h4>
+            <ul>
+                <li>
+                    Permite a los programadores escribir programas que el procesador pueda ejecutar.
+                </li>
+                <li>
+                    Actúa como una interfaz entre el software y el hardware.
+                </li>
+                <li>
+                    Influye directamente en el diseño del procesador y su rendimiento.
+                </li>
+                <li>
+                    Diferentes arquitecturas de procesadores (por ejemplo, x86, ARM, RISC-V) tienen diferentes ISAs.
+                </li>
+            </ul>
+            </p>
+            <h3>Modos de direccionamiento</h3>
+            <p>
+                Los modos de direccionamiento definen cómo se especifica la ubicación de un operando (un dato) dentro de
+                una instrucción. Diferentes modos ofrecen flexibilidad para acceder a los datos de diversas maneras.
+                Algunos modos de direccionamiento comunes incluyen:
+            <ul>
+                <li>
+                    <b>Inmediato:</b> El operando es un valor constante que está incluido directamente en la
+                    instrucción.
+                </li>
+                <li>
+                    <b>Registro:</b> El operando está ubicado en uno de los registros del procesador.
+                </li>
+                <li>
+                    <b>Directo (Absoluto):</b> La instrucción contiene la dirección de memoria exacta donde se encuentra
+                    el operando.
+                </li>
+                <li>
+                    <b>Indirecto:</b> La instrucción contiene la dirección de memoria donde se encuentra la dirección
+                    del operando.
+                </li>
+                <li>
+                    <b>Registro Indirecto:</b> La instrucción especifica un registro que contiene la dirección de
+                    memoria del operando.
+                </li>
+                <li>
+                    <b>Desplazamiento (o Base + Desplazamiento):</b> La dirección del operando se calcula sumando un
+                    valor
+                    de desplazamiento (constante en la instrucción) al contenido de un registro base.
+                </li>
+                <li>
+                    <b>Indexado:</b> La dirección del operando se calcula sumando el contenido de un registro índice a
+                    una dirección base (que puede estar en otro registro o en la instrucción). Puede incluir un factor
+                    de escala para acceder fácilmente a elementos de arrays.
+                </li>
+                <li>
+                    <b>Relativo al PC:</b> La dirección del operando se calcula sumando un desplazamiento al valor
+                    actual del Contador de Programa (útil para saltos y bifurcaciones dentro del mismo segmento de
+                    código).
+                </li>
+            </ul>
+            </p>
+            <hr>
+            <h2>Casos de estudio</h2>
+            <p>
+                Analizar casos de estudio de CPUs reales es una excelente manera de consolidar los conceptos que hemos
+                visto sobre la organización, la estructura de registros y el ciclo de instrucción. Cada arquitectura de
+                CPU tiene sus propias características y optimizaciones, influenciadas por su diseño, el mercado al que
+                se dirige y la época en la que fue desarrollada.
+            <h4>Intel x86 (por ejemplo, Intel Core i7/i9)</h4>
+            <ul>
+                <li>
+                    <b>Organización:</b>
+                    <ul>
+                        <li>
+                            Arquitectura compleja (CISC - Complex Instruction Set Computer) que ha evolucionado a lo
+                            largo de décadas.
+                        </li>
+                        <li>
+                            Utiliza una microarquitectura segmentada y superescalar para lograr un alto rendimiento.
+                        </li>
+                        <li>
+                            Incluye múltiples unidades de ejecución, predicción de saltos avanzada y una compleja
+                            jerarquía de caché (L1, L2, L3).
+                        </li>
+                        <li>
+                            Implementa técnicas de ejecución fuera de orden (out-of-order execution) para optimizar el
+                            uso de las unidades de ejecución.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Estructura de Registros:</b>
+                    <ul>
+                        <li>
+                            Un conjunto de registros de propósito general (RAX, RBX, RCX, RDX, RSI, RDI, RSP, RBP,
+                            R8-R15) de 64 bits.
+                        </li>
+                        <li>
+                            Registros de segmento (CS, DS, SS, ES, FS, GS), aunque su uso directo es limitado en modo de
+                            64 bits.
+                        </li>
+                        <li>
+                            Un registro de estado (RFLAGS) que contiene banderas de condición y control.
+                        </li>
+                        <li>
+                            Un puntero de instrucción (RIP).
+                        </li>
+                        <li>
+                            Registros para operaciones de coma flotante (XMM, YMM, ZMM).
+                        </li>
+                        <li>
+                            Registros de control del sistema (CR0-CR4, y más en sistemas de 64 bits) para gestionar la
+                            memoria y otros aspectos del sistema.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Ciclo de Instrucción:</b>
+                    <ul>
+                        <li>
+                            El ciclo básico Fetch-Decode-Execute se implementa a través de un pipeline complejo con
+                            muchas etapas para permitir la ejecución simultánea de múltiples instrucciones.
+                        </li>
+                        <li>
+                            La decodificación de las instrucciones CISC puede ser compleja, a menudo dividiéndose en
+                            microoperaciones (uops) que luego se ejecutan en el pipeline.
+                        </li>
+                        <li>
+                            Soporta una amplia variedad de modos de direccionamiento.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <h4>ARM (por ejemplo, ARM Cortex-A72, Apple M1/M2)</h4>
+            <ul>
+                <li>
+                    <b>Organización:</b>
+                    <ul>
+                        <li>
+                            Arquitectura RISC (Reduced Instruction Set Computer) diseñada para eficiencia energética y
+                            rendimiento.
+                        </li>
+                        <li>
+                            Microarquitecturas segmentadas y superescalares modernas.
+                        </li>
+                        <li>
+                            Énfasis en la ejecución eficiente con un menor número de ciclos por instrucción en
+                            comparación con CISC.
+                        </li>
+                        <li>
+                            Utiliza también jerarquías de caché.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Estructura de Registros:</b>
+                    <ul>
+                        <li>
+                            Un conjunto más grande de registros de propósito general (por ejemplo, 31 registros de 64
+                            bits en la arquitectura AArch64).
+                        </li>
+                        <li>
+                            Un contador de programa (PC).
+                        </li>
+                        <li>
+                            Un puntero de pila (SP).
+                        </li>
+                        <li>
+                            Un registro de enlace (LR) para almacenar la dirección de retorno de las funciones.
+                        </li>
+                        <li>
+                            Un registro de estado (CPSR o SPSR).
+                        </li>
+                        <li>
+                            Registros para operaciones SIMD (NEON).
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Ciclo de Instrucción:</b>
+                    <ul>
+                        <li>
+                            El ciclo Fetch-Decode-Execute se implementa con un pipeline más sencillo en comparación con
+                            x86, aunque las microarquitecturas de alto rendimiento de ARM también utilizan pipelines
+                            profundos.
+                        </li>
+                        <li>
+                            Las instrucciones RISC son generalmente de longitud fija y más fáciles de decodificar.
+                        </li>
+                        <li>
+                            Soporta varios modos de direccionamiento, aunque generalmente menos complejos que en x86.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <h4>RISC-V</h4>
+            <ul>
+                <li>
+                    <b>Organización:</b>
+                    <ul>
+                        <li>
+                            Una arquitectura RISC abierta y modular, diseñada para ser extensible y adaptable a
+                            diferentes necesidades.
+                        </li>
+                        <li>
+                            Implementaciones pueden variar ampliamente en complejidad, desde núcleos muy simples para
+                            sistemas embebidos hasta procesadores de alto rendimiento.
+                        </li>
+                        <li>
+                            Soporta diferentes extensiones para características como aritmética de coma flotante,
+                            instrucciones atómicas y procesamiento vectorial.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Estructura de Registros:</b>
+                    <ul>
+                        <li>
+                            Generalmente incluye 32 registros de propósito general (x0-x31). El registro x0 está
+                            cableado a cero.
+                        </li>
+                        <li>
+                            Un contador de programa (PC).
+                        </li>
+                        <li>
+                            Un registro de estado (CSR - Control and Status Registers) para gestionar el estado del
+                            procesador y las funciones privilegiadas.
+                        </li>
+                        <li>
+                            Registros de coma flotante (f0-f31) si la extensión de coma flotante está presente.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Ciclo de Instrucción:</b>
+                    <ul>
+                        <li>
+                            Sigue el ciclo Fetch-Decode-Execute con un pipeline que puede variar en profundidad según la
+                            implementación.
+                        </li>
+                        <li>
+                            Las instrucciones RISC-V son de longitud fija (generalmente 32 bits) y tienen un formato
+                            simple, lo que facilita la decodificación.
+                        </li>
+                        <li>
+                            Ofrece un conjunto de modos de direccionamiento básicos y bien definidos.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            </p>
+        </article>
+    </main>
+    <footer>
+        <p>©Unidad 2</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Temario</a></li>
+                <li><a href="Unidad 1.html">Unidad 1</a></li>
+                <li><a href="Unidad 3.html">Unidad 3</a></li>
+                <li><a href="Unidad 4.html">Unidad 4</a></li>
+                <li><a href="Practicas.html">Prácticas</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>

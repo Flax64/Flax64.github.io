@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Unidad 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style_unidades.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Share+Tech&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Cal+Sans&family=Share+Tech&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Cal+Sans&family=Share+Tech&family=Tagesschrift&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <h1>Unidad 1</h1>
+    </header>
+    <main>
+        <article>
+            <h2>Modelos de Arquitectura de Cómputo</h2>
+            <p>
+                La arquitectura de computadoras es el diseño conceptual y la estructura operacional fundamental de
+                un
+                sistema de computadoras. Es un plano detallado y la descripción funcional de los requisitos y las
+                implementaciones de diseño para varias partes de una computadora, especialmente la forma en que la
+                unidad central de procesamiento (CPU) funciona internamente y accede a las direcciones de memoria.
+            </p>
+            <h3>Clásicas</h3>
+            <p>
+            <ul>
+                <li>
+                    <b>Arquitectura de Von Neumann:</b> Propuesta por John Von Neumann en la década de 1940. Se basa
+                    en
+                    una unidad
+                    central de procesamiento (CPU) que accede a una memoria compartida para almacenar tanto datos
+                    como
+                    programas. Las instrucciones y los datos se guardan en la misma memoria y se recuperan a través
+                    de
+                    un
+                    bus común. Es la base de la mayoría de las computadoras modernas.
+                </li>
+                <li>
+                    <b>Arquitectura Harvard:</b> Utiliza memorias físicamente separadas para las instrucciones del
+                    programa y
+                    los datos. Esto permite que la CPU acceda simultáneamente a ambos, mejorando el rendimiento en
+                    ciertas aplicaciones. Se usa principalmente en aplicaciones que requieren un alto rendimiento en
+                    el
+                    procesamiento de señales.
+                </li>
+            </ul>
+            </p>
+            <h3>Segmentadas</h3>
+            <p>
+                Descompone el proceso de ejecución de instrucciones en fases o etapas, permitiendo la ejecución
+                simultánea de múltiples instrucciones. Mejora el rendimiento al aumentar el número de instrucciones
+                que
+                se ejecutan por unidad de tiempo.
+            </p>
+            <h3>De multiprocesamiento</h3>
+            <p>
+                Utilizan múltiples procesadores que trabajan juntos para realizar tareas de manera eficiente.
+                Existen
+                diferentes tipos, como el multiprocesamiento simétrico (SMP), donde todos los procesadores comparten
+                la
+                misma memoria, y el multiprocesamiento asimétrico (AMP), donde se asignan tareas específicas a
+                procesadores individuales.
+            </p>
+            <hr>
+            <h2>Análisis de Componentes</h2>
+            <p>
+                Para comprender cómo funciona una computadora, es esencial analizar sus componentes clave y cómo
+                interactúan entre sí. A continuación, desglosamos los elementos fundamentales:
+            </p>
+            <h3>Arquitecturas</h3>
+            <p>
+                Dentro de la arquitectura general de una computadora, encontramos los bloques de construcción
+                esenciales:
+            <ul>
+                <li>
+                    <b>Placa Madre (Motherboard):</b> La placa madre es el componente principal que interconecta
+                    todos
+                    los
+                    demás componentes de la
+                    computadora.que permiten la comunicación entre los diferentes componentes.Actúa como una
+                    plataforma para la instalación de la CPU, la RAM, las tarjetas de expansión y otros periféricos.
+                </li>
+                <li>
+                    <b>Unidad Central de Procesamiento (CPU):</b> El "cerebro" de la computadora. Es el componente
+                    encargado de
+                    ejecutar las instrucciones de los programas. Realiza operaciones aritméticas, lógicas y de
+                    control.
+                </li>
+                <ul>
+                    <li>
+                        Unidad Aritmética Lógica (ALU): Parte de la CPU que realiza las operaciones aritméticas
+                        (suma,
+                        resta, multiplicación, división) y lógicas (AND, OR, NOT).
+                    </li>
+                    <li>
+                        Registros: Pequeñas áreas de almacenamiento de alta velocidad dentro de la CPU que se
+                        utilizan
+                        para
+                        guardar datos e instrucciones que se están utilizando activamente.
+                        <ul>
+                            <li>
+                                Registros de Datos: Almacenan los datos que están siendo procesados o manipulados.
+                                Pueden ser utilizados para guardar operandos en una operación aritmética.
+                            </li>
+                            <li>
+                                Registros de Dirección: Almacenan direcciones de memoria, como las direcciones de
+                                los
+                                operandos o la siguiente instrucción a ejecutar.
+                            </li>
+                            <li>
+                                Registros de Propósito General: Son registros que pueden ser utilizados por las
+                                instrucciones de la CPU para almacenar cualquier dato o dirección. Por lo general,
+                                son
+                                accesibles para la mayoría de las instrucciones.
+                            </li>
+                            <li>
+                                Registros de Propósito Especial: Estos incluyen registros específicos para el
+                                control
+                                del
+                                flujo, como el contador de programa (PC), el registro de estado (PSW), y el registro
+                                de
+                                instrucciones (IR).
+                            </li>
+                            <li>
+                                Registros de Estado (Flags): Estos registros almacenan indicadores de estado que
+                                muestran el resultado de las operaciones realizadas (por ejemplo, si ocurrió un
+                                desbordamiento, si un resultado es cero, o si se produjo un error de signo).
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Unidad de Control: Dirige y coordina las actividades de la CPU, interpretando las
+                        instrucciones
+                        y
+                        generando las señales de control necesarias para que otros componentes realicen sus tareas.
+                    </li>
+                </ul>
+                <li>
+                    <b>Memoria RAM (Random Access Memory):</b> Almacena datos y programas que están en uso en un
+                    momento
+                    dado,
+                    es una memoria volátil, lo que
+                    significa que los datos se pierden cuando la computadora se apaga.
+                </li>
+                <li>
+                    <b>Fuente de poder (Power Supply):</b> La fuente de alimentación (PSU) proporciona la energía
+                    necesaria
+                    para que todos los componentes de
+                    la computadora funcionen.Regula y distribuye la energía de manera eficiente a la placa madre, la
+                    CPU, la memoria y otros periféricos.
+                </li>
+            </ul>
+            </p>
+            <h3>Memoria</h3>
+            <p>
+                La memoria principal es la encargada de almacenar temporalmente los datos e
+                instrucciones que la CPU necesita para ejecutar programas. Es fundamental para el
+                rendimiento del sistema.
+                <br>
+                La memoria es un componente fundamental de cualquier sistema informático, ya
+                que almacena y recupera datos e instrucciones necesarias para la ejecución de
+                procesos. Se clasifica en varios tipos según su función, velocidad y volatilidad.
+            <h4>Clasificación de la Memoria</h4>
+            <ul>
+                <li>Memoria Volátil: Pierde su contenido cuando se apaga el equipo.</li>
+                <ul>
+                    <li>Memoria RAM (Random Access Memory).</li>
+                    <li>Memoria Caché.</li>
+                    <li>Registros del procesador.</li>
+                </ul>
+                <li>Memoria No Volátil: Retiene los datos incluso sin energía.</li>
+                <ul>
+                    <li>Memoria ROM (Read-Only Memory).</li>
+                    <li>Dispositivos de almacenamiento (SSD, HDD, USB, SD).</li>
+                    <li>Memoria Flash.</li>
+                </ul>
+            </ul>
+            <h4>Conceptos Básicos del Manejo de Memoria</h4>
+            Se refiere a las técnicas y estrategias utilizadas para asignar, gestionar y liberar espacio de memoria
+            de
+            manera eficiente. Esto incluye conceptos como la segmentación, la paginación y la memoria virtual.
+            <h4>Asignación de Memoria</h4>
+            <ul>
+                <li>
+                    <b>Estatica:</b> Se reserva una cantidad fija de memoria antes de la
+                    ejecucion del programa.
+                </li>
+                <li>
+                    <b>Dinamica:</b> Se asigna y libera memoria en tiempos ejecucion,
+                    optimizando recursos.
+                </li>
+            </ul>
+            <h4>Jerarquia de Memoria</h4>
+            <ul>
+                <li><b>Registros:</b> Los más rápidos, dentro del procesador.</li>
+                <li><b>Memoria Caché:</b> Rápida pero con capacidad limitada.</li>
+                <li><b>RAM:</b> Más grande, pero más lenta que la caché.</li>
+                <li><b>Almacenamiento Secundario:</b> Mucho más grande, pero
+                    más lento que la RAM.</li>
+            </ul>
+            <h4>Gestión de Memoria</h4>
+            <ul>
+                <li>
+                    <b>Segmentación:</b> Divide la memoria en segmentos lógicos según su
+                    tipo de uso (código, datos, pila).
+                </li>
+                <li>
+                    <b>Paginación:</b> Divide la memoria en páginas de tamaño fijo, evitando
+                    fragmentación.
+                </li>
+                <li>
+                    <b>Swapping:</b> Mueve procesos entre RAM y disco para optimizar el
+                    uso de memoria.
+                </li>
+            </ul>
+            <h4>Fragmentación de Memoria</h4>
+            <ul>
+                <li>
+                    <b>Fragmentación Interna:</b> Ocurre cuando los bloques de
+                    memoria asignados son más grandes de lo necesario.
+                </li>
+                <li>
+                    <b>Fragmentación Externa:</b> Ocurre cuando hay pequeños bloques
+                    libres dispersos que no pueden usarse eficientemente.
+                </li>
+            </ul>
+            <h4>Memoria Principal (RAM - Random Access Memory)</h4>
+            Es la memoria de acceso aleatorio donde se almacenan temporalmente los datos y los programas que la CPU
+            está
+            utilizando en un momento dado. Es volátil, lo que significa que su contenido se pierde al apagar la
+            computadora.
+            <h4>Tipos de Memoria Principal</h4>
+            <ul>
+                <li>RAM (Random Access Memory)</li>
+                <ul>
+                    <li>Almacena datos e instrucciones temporalmente.</li>
+                    <li>Es volátil.</li>
+                    <li>Permite acceso rápido a la CPU.</li>
+                </ul>
+                <li>ROM (Read-Only Memory)</li>
+                <ul>
+                    <li>Contiene instrucciones esenciales, como el firmware del sistema.</li>
+                    <li>No volátil.</li>
+                    <li>No se puede modificar fácilmente.</li>
+                </ul>
+            </ul>
+            <h4>Memoria Caché</h4>
+            Una memoria pequeña y de alta velocidad ubicada entre la CPU y la memoria principal. Almacena copias de
+            los
+            datos e instrucciones utilizados con más frecuencia para acelerar el acceso a ellos por parte de la CPU.
+            Existen diferentes niveles de caché (L1, L2, L3), con diferentes tamaños y velocidades.
+            <br><br>
+            Tiene como caracteristicas principales su velocidad alta superando a la
+            RAM, su cercana ubicación al procesador que se encuentra
+            integrado en la CPU o en la placa base, su tamaño pequeño
+            generalmente en Kilobytes(KB) o Megabytes(MB) ademas de su uso
+            inteligente que almacena datos y programas usados recienemente para
+            reducir los tiempos de espera
+            Como ventajas tenemos que reduce el tiempo de acceso de los datos,
+            mejora el rendimiento del procesador y disminuye la carga sobre la
+            memoria RAM.
+            </p>
+            <h3>Manejo de Entrada y Salida</h3>
+            <p>
+                El manejo eficiente de múltiples dispositivos de entrada y salida (E/S) es crucial para
+                garantizar un rendimiento óptimo del sistema. Dado que los dispositivos periféricos
+                varían en velocidad y características, se implementan diversas técnicas para gestionar
+                la comunicación entre la CPU y estos dispositivos.
+            <h4>Módulos de entrada/Salida</h4>
+            Interfaces que conectan los dispositivos periféricos al bus del sistema. Controlan la transferencia de
+            datos
+            entre la computadora y los dispositivos.
+            <br><br>
+            Los módulos de entrada/salida (E/S) son esenciales ya que
+            permiten la comunicación entre la CPU y los periféricos externos.
+            <h4>Funciones Básicas de los Módulos de E/S</h4>
+            <ul>
+                <li>
+                    <b>Dirección:</b> Se refiere a cómo la CPU selecciona y se comunica
+                    con un dispositivo de E/S especifico. Cada dispositivo tiene una
+                    dirección única que la CPU utiliza para enviar y recibir datos.
+                </li>
+                <li>
+                    <b>Sincronización:</b> Es el proceso de coordinar la transferencia de
+                    datos entre la CPU y los dispositivos de E/S para asegurar que
+                    ambos estén listos para enviar o recibir información.
+                </li>
+                <li>
+                    <b>Transferencia:</b> Este es el proceso real de mover dato entre la
+                    CPU y los dispositivos de E/S. Puede realizarse mediante varios
+                    métodos, como transferencia por encuesta (polling),
+                    interrupciones o acceso directo a memoria (DMA).
+                </li>
+            </ul>
+            <h4>Dispositivos de E/S Comunes</h4>
+            <ul>
+                <li>
+                    <b>Puertos Paralelos:</b> Permiten la transferencia de
+                    múltiples bits de datos al mismo tiempo. Son
+                    rápidos y se utilizan principalmente para
+                    impresoras.
+                </li>
+                <li>
+                    <b>Puertos Seriales:</b> Permiten la transferencia de un
+                    bit a la vez. Son más lentos que los puertos
+                    paralelos pero son útiles para largas distancias y
+                    conexiones estables, como módems y dispositivos
+                    de comunicación.
+                </li>
+            </ul>
+            <h4>Entrada y salida programada</h4>
+            Se refiere a un método de comunicación entre la CPU y los dispositivos de E/S
+            (como teclados, impresoras o discos duros) en el cual el procesador controla
+            directamente las operaciones de entrada y salida mediante instrucciones
+            específicas en el programa.
+            <h4>Entrada/Salida Mediante Interrupciones</h4>
+            Los dispositivos periféricos pueden enviar señales de "interrupción" a la CPU para indicar que están
+            listos
+            para transferir datos. Esto permite que la CPU realice otras tareas mientras el dispositivo E/S está
+            ocupado.
+            <h4>Acceso directo a la memoria (DMA)</h4>
+            El acceso directo a memoria (DMA, Direct Memory
+            Access) es un método que permite a ciertos dispositivos
+            de hardware acceder directamente a la memoria
+            principal sin la intervención del procesador.
+            Esto mejora el rendimiento del sistema al liberar a la
+            CPU de la carga de mover datos entre dispositivos de
+            entrada/salida (E/S) y la RAM.
+            <h4>Canales y Procesadores de Entrada/Salida</h4>
+            En sistemas más complejos, se utilizan procesadores dedicados para gestionar las operaciones de E/S,
+            liberando a la CPU principal para otras tareas.
+            </p>
+            <h3>Buses</h3>
+            <p>
+                Los buses son las autopistas de datos dentro de una computadora. Permiten que la información viaje
+                entre
+                la CPU, la memoria y los periféricos. Sin ellos, cada componente estaría aislado.
+            <h4>Tipos de Buses</h4>
+            <ul>
+                <li>
+                    <b>Bus de Datos:</b> Transporta los datos reales que se están procesando. Esto incluye
+                    instrucciones
+                    de programas, datos que se están leyendo de la memoria o escribiendo en ella, y la información
+                    que
+                    se intercambia con los dispositivos de entrada/salida.
+                    Un factor crítico que determina la cantidad de bits que se pueden transferir simultáneamente. Un
+                    bus
+                    de datos de 32 bits puede transferir 32 bits de información en cada ciclo, mientras que un bus
+                    de 64
+                    bits puede transferir el doble, lo que generalmente resulta en un mayor rendimiento.
+                    La mayoría de los buses de datos son bidireccionales, lo que significa que los datos pueden
+                    fluir en
+                    ambas direcciones (hacia y desde la CPU, la memoria, etc.).
+                </li>
+                <li>
+                    <b>Bus de Direcciones:</b> Especifica la ubicación de la memoria o el dispositivo periférico al
+                    que
+                    la CPU quiere acceder. Cuando la CPU necesita leer o escribir datos, coloca una dirección en el
+                    bus
+                    de direcciones para indicar dónde se encuentra la información. Determina la cantidad de
+                    ubicaciones
+                    de memoria diferentes que la CPU puede direccionar. Un bus de direcciones de n bits puede
+                    direccionar 2^n ubicaciones de memoria. Por ejemplo, un bus de direcciones de 32 bits puede
+                    direccionar hasta 4 Gigabytes (GB) de memoria. El bus de direcciones suele ser unidireccional,
+                    ya
+                    que la CPU es la que especifica la dirección.
+                </li>
+                <li>
+                    <b>Bus de Control:</b> Transporta señales de control que coordinan las actividades de todos los
+                    componentes del sistema. Estas señales indican el tipo de operación que se va a realizar
+                    (lectura o
+                    escritura), sincronizan la transferencia de datos y gestionan el acceso al bus por parte de
+                    múltiples dispositivos. Incluyen señales de lectura (READ), escritura (WRITE), solicitud de bus
+                    (BUS
+                    REQUEST), concesión de bus (BUS GRANT), reloj (CLOCK) para sincronización, reset (RESET), y
+                    señales
+                    de interrupción (INTERRUPT).
+                </li>
+            </ul>
+            <h4>Estructura de los Buses</h4>
+            La estructura física y lógica de un bus es crucial para su eficiencia.
+            <ul>
+                <li>
+                    <b>Líneas de Comunicación:</b> Un bus está compuesto por un conjunto de líneas de cableado o
+                    pistas
+                    en la
+                    placa base. Cada línea tiene una función específica (llevar un bit de datos, una línea de
+                    dirección,
+                    una señal de control).
+                </li>
+                <li>
+                    <b>Protocolos de Comunicación:</b> Los buses operan bajo protocolos específicos que definen las
+                    reglas para
+                    la transmisión de datos, incluyendo la temporización de las señales, la forma en que los
+                    dispositivos solicitan y obtienen acceso al bus, y cómo se manejan los errores.
+                </li>
+                <li>
+                    <b>Controladores de Bus:</b> Circuitos que gestionan el acceso al bus por parte de los
+                    diferentes
+                    componentes, asegurando que solo un dispositivo transmita datos a la vez (en la mayoría de los
+                    buses) para evitar colisiones.
+                </li>
+            </ul>
+            <h4>Jerarquías de Buses</h4>
+            Los sistemas modernos de computación a menudo emplean múltiples buses organizados en una jerarquía para
+            optimizar el rendimiento.
+            <ul>
+                <li>
+                    <b>Bus del Sistema (Front-Side Bus - FSB o similar):</b> Conecta la CPU con la memoria principal
+                    y
+                    los
+                    componentes de alta velocidad. Suele ser el bus más rápido del sistema.
+                </li>
+                <li>
+                    <b>Bus de Memoria:</b> Un bus dedicado de alta velocidad que conecta directamente la CPU (o el
+                    controlador
+                    de memoria integrado en la CPU) con los módulos de RAM.
+                </li>
+                <li>
+                    <b>Bus de E/S:</b> Conecta los dispositivos periféricos al sistema. Estos buses suelen ser más
+                    lentos que
+                    el bus del sistema y pueden incluir estándares como PCI Express (PCIe), SATA (para discos
+                    duros), y
+                    USB.
+                </li>
+                <li>
+                    <b>Puentes (Bridges):</b> Componentes que interconectan buses con diferentes velocidades y
+                    protocolos,
+                    permitiendo la comunicación entre ellos.
+                </li>
+            </ul>
+            </p>
+            <h3>Interrupciones</h3>
+            <p>
+                Las interrupciones son un mecanismo esencial que permite a los dispositivos de hardware y software
+                señalar a la CPU que necesitan atención inmediata.
+            <h4>Funcionamiento de las Interrupciones</h4>
+            <ul>
+                <li>
+                    <b>Generación de la Interrupción:</b> Un dispositivo (por ejemplo, un teclado cuando se presiona
+                    una
+                    tecla,
+                    un disco duro cuando termina una operación de lectura/escritura, un programa cuando ocurre un
+                    error)
+                    genera una señal de interrupción.
+                </li>
+                <li>
+                    <b>Detección por la CPU:</b> La CPU tiene líneas de interrupción dedicadas que monitorean estas
+                    señales.
+                    Cuando se detecta una interrupción, la CPU detiene temporalmente la ejecución del programa
+                    actual.
+                </li>
+                <li>
+                    <b>Reconocimiento de la Interrupción:</b> La CPU identifica el origen de la interrupción. Puede
+                    haber
+                    múltiples fuentes de interrupción, por lo que la CPU necesita determinar qué dispositivo o
+                    evento
+                    generó la señal.
+                </li>
+                <li>
+                    <b>Guardado del Estado:</b> Antes de atender la interrupción, la CPU guarda el estado actual del
+                    programa
+                    que estaba ejecutando (por ejemplo, el valor de los registros, la dirección de la siguiente
+                    instrucción a ejecutar) en la pila (stack) para poder retomarlo más tarde.
+                </li>
+                <li>
+                    <b>Ejecución del Manejador de Interrupciones (ISR - Interrupt Service Routine):</b> La CPU
+                    transfiere el
+                    control a una rutina especial llamada manejador de interrupciones o rutina de servicio de
+                    interrupción. Esta rutina es específica para el tipo de interrupción que ocurrió y contiene el
+                    código necesario para atender el evento (por ejemplo, leer los datos del teclado, notificar al
+                    sistema operativo la finalización de la operación del disco).
+                </li>
+                <li>
+                    <b>Restauración del Estado:</b> Una vez que el manejador de interrupciones ha terminado su
+                    tarea,
+                    restaura
+                    el estado guardado del programa original desde la pila.
+                </li>
+                <li>
+                    <b>Reanudación de la Ejecución:</b> La CPU continúa la ejecución del programa interrumpido desde
+                    el
+                    punto donde se detuvo.
+                </li>
+            </ul>
+            <h4>Tipos de Interrupciones</h4>
+            <ul>
+                <li><b>Interrupciones de Hardware:</b> Generadas por dispositivos físicos, como:</li>
+                <ul>
+                    <li>
+                        Interrupciones Externas: Provenientes de periféricos (teclado, ratón, impresora, tarjeta de
+                        red).
+                    </li>
+                    <li>
+                        Interrupciones Internas (Excepciones): Generadas por la propia CPU debido a condiciones
+                        excepcionales durante la ejecución de un programa (división por cero, desbordamiento de
+                        memoria,
+                        acceso a memoria no válida).
+                    </li>
+                    <li>
+                        Interrupciones Enmascarables y No Enmascarables: Las interrupciones enmascarables pueden ser
+                        ignoradas temporalmente por la CPU, mientras que las no enmascarables (como un fallo de
+                        hardware
+                        grave) siempre deben ser atendidas inmediatamente.
+                    </li>
+                </ul>
+                <li><b>Interrupciones de Software:</b> Generadas por programas mediante instrucciones especiales
+                    (llamadas al
+                    sistema operativo). Se utilizan para solicitar servicios del sistema operativo, como leer o
+                    escribir
+                    un archivo.</li>
+            </ul>
+            <h4>Importancia de las Interrupciones</h4>
+            <ul>
+                <li>
+                    Permiten que la CPU realice otras tareas mientras los dispositivos periféricos realizan
+                    operaciones
+                    más
+                    lentas. Sin interrupciones, la CPU tendría que esperar constantemente a que los dispositivos
+                    terminen, lo
+                    que sería muy ineficiente.
+                </li>
+                <li>
+                    Permiten que el sistema responda rápidamente a eventos externos importantes.
+                </li>
+                <li>
+                    Facilitan la detección y el manejo de condiciones de error y excepciones durante la ejecución de
+                    programas.
+                </li>
+                <li>
+                    Las interrupciones de software son la principal forma en que los programas de usuario
+                    interactúan
+                    con el
+                    sistema operativo para solicitar servicios.
+                </li>
+            </ul>
+            </p>
+        </article>
+    </main>
+    <footer>
+        <p>©Unidad 1</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Temario</a></li>
+                <li><a href="Unidad 2.html">Unidad 2</a></li>
+                <li><a href="Unidad 3.html">Unidad 3</a></li>
+                <li><a href="Unidad 4.html">Unidad 4</a></li>
+                <li><a href="Practicas.html">Prácticas</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>

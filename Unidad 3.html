@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Unidad 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style_unidades.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Share+Tech&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Cal+Sans&family=Share+Tech&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Cal+Sans&family=Share+Tech&family=Tagesschrift&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Unidad 3</h1>
+    </header>
+    <main>
+        <article>
+            <h2>Chipset</h2>
+            <h3>Unidad central de procesamiento</h3>
+            <p>
+                La Unidad Central de Procesamiento, comúnmente conocida como CPU, es el
+                componente principal de una computadora encargado de interpretar y ejecutar las
+                instrucciones de los programas. Actúa como el "cerebro" del sistema, procesando
+                datos y realizando cálculos necesarios para el funcionamiento de las aplicaciones y del
+                propio sistema operativo.
+                <br>
+                Una CPU típica consta de los siguientes componentes:
+            <ul>
+                <li>
+                    <b>Unidad Aritmético-Lógica (ALU):</b> Realiza operaciones matemáticas y lógicas.
+                </li>
+                <li>
+                    <b>Unidad de Control:</b> Dirige y coordina las operaciones de la
+                    computadora, interpretando las instrucciones y gestionando
+                    su ejecución.
+                </li>
+                <li>
+                    <b>Registros:</b> Pequeñas áreas de almacenamiento que contienen datos temporales y direcciones
+                    utilizadas durante el procesamiento.
+                </li>
+            </ul>
+            </p>
+            <h3>Control del BUS</h3>
+            <p>
+                En la arquitectura de las computadoras, el bus de control es una parte esencial del sistema de
+                buses que permite la comunicación entre la CPU y otros dispositivos dentro del equipo. Mientras
+                que el bus de direcciones transporta información sobre la ubicación de los datos y el bus de
+                datos transfiere los propios datos, el bus de control transmite señales de comando desde la CPU
+                y recibe señales de estado de los dispositivos.
+            <h4>Funciones del Control del BUS</h4>
+            <ul>
+                <li>
+                    Coordina la ejecución de instrucciones en la CPU y la comunicación con la memoria y dispositivos de
+                    entrada/salida.
+                </li>
+                <li>
+                    Envía señales de reloj para asegurar que todos los componentes trabajen en sincronía.
+                </li>
+                <li>
+                    Controla el acceso a la memoria RAM, evitando conflictos entre múltiples dispositivos que intentan
+                    leer o escribir datos simultáneamente.
+                </li>
+                <li>
+                    Transporta señales que indican si la operación es de lectura o escritura.
+                </li>
+                <li>
+                    Especifica si la operación involucra memoria, entrada/salida o registros internos de la CPU.
+                </li>
+                <li>
+                    Recibe y maneja interrupciones generadas por dispositivos externos (como el teclado o el disco
+                    duro), pausando
+                    temporalmente la ejecución de la CPU para atenderlas.
+                </li>
+                <li>
+                    Envía señales de habilitación o deshabilitación a dispositivos periféricos según sea necesario.
+                </li>
+                <li>
+                    Detecta errores en la transferencia de datos y puede solicitar reintentos en caso de fallos en la
+                    comunicación.
+                </li>
+            </ul>
+            </p>
+            <h3>Puentes de entrada-salida</h3>
+            <p>
+                Los puentes de entrada y salida de un chipset son el puente norte y el puente sur,
+                que controlan el flujo de datos entre los componentes de la tarjeta madre.
+            <h4>Puente Norte</h4>
+            El lado norte se encarga de controlar los dispositivos de almacenamiento y demás periféricos que tienen
+            dentro del CPU una velocidad de transferencia de datos menor.
+            <ul>
+                <li>
+                    Controla el flujo de datos entre la CPU, la memoria RAM y la tarjeta gráfica.
+                </li>
+                <li>
+                    Determina el tipo de procesador y memoria RAM que admite la placa base.
+                </li>
+                <li>
+                    Conecta la CPU al puente norte mediante el bus frontal (FSB).
+                </li>
+                <li>
+                    Conecta el puente norte con el chip del puente sur mediante el bus PCI.
+                </li>
+            </ul>
+            <h4>Puente Sur</h4>
+            El lado sur se encarga de los dispositivos como la comunicación con las tarjetas de expansión y demás chips
+            que requieren una mayor velocidad de transferencia de datos.
+            <ul>
+                <li>
+                    Controla el flujo de datos con la BIOS, los dispositivos de entrada/salida (E/S), las unidades IDE,
+                    las tarjetas de expansión PCI y los dispositivos externos USB.
+                </li>
+                <li>
+                    También se le conoce como Concentrador de Controladores de Entrada/Salida (I/O Controller Hub, ICH).
+                </li>
+                <li>
+                    Coordina los diferentes dispositivos de entrada y salida y algunas otras funcionalidades de baja
+                    velocidad.
+                </li>
+            </ul>
+            </p>
+            <h3>Controlador de interrupciones</h3>
+            <p>
+                Un controlador de interrupciones es un componente que reúne eventos de interrupción
+                de hardware de varias fuentes y los presenta al procesador , lo que permite un manejo
+                eficiente de eventos en tiempo real sin la necesidad de un sondeo constante por parte
+                del procesador, permitiendo un manejo eficiente de eventos en tiempo real.
+            <h4>¿Cómo funciona?</h4>
+            <ul>
+                <li>
+                    El controlador de interrupciones reúne las solicitudes de interrupción de los
+                    dispositivos.
+                </li>
+                <li>
+                    Establece prioridades entre las solicitudes de interrupción.
+                </li>
+                <li>
+                    Selecciona la solicitud de interrupción que informará al procesador principal.
+                </li>
+                <li>
+                    Recibe una notificación con el número de interrupción.
+                </li>
+                <li>
+                    Ejecuta la rutina de servicio de interrupciones (ISR) correspondiente.
+                </li>
+            </ul>
+            </p>
+            <h3>Controlador de acceso directo a la memoria(DMA)</h3>
+            <p>
+                El acceso directo a memoria (DMA, del inglés
+                memory access direct) permite a cierto tipo de componentes de una computadora acceder a
+                la memoria del sistema para leer o escribir independientemente de la unidad
+                central de procesamiento (CPU), DMA es una
+                característica esencial en todos los ordenadores
+                modernos, ya que permite a dispositivos de diferentes
+                velocidades comunicarse sin someter a la CPU a una
+                carga masiva de interrupciones.
+                <br><br>
+                Una transferencia DMA consiste principalmente en
+                copiar un bloque de memoria de un dispositivo a otro. En
+                lugar de que la CPU inicie la transferencia, la
+                transferencia se lleva a cabo por el controlador DMA. Un
+                ejemplo típico es mover un bloque de memoria desde
+                una memoria externa a una interna más rápida. Tal
+                operación no ocupa al procesador y, por ende, éste
+                puede efectuar otras tareas.
+            <h4>Problemas de Coherencia en la Memoria Cache</h4>
+            La DMA puede llevar a problemas de coherencia de caché. Cuando la CPU accede a X lugar en la memoria, el
+            valor actual se almacena en la caché. Si se realizan operaciones posteriores en X, se actualizará la copia
+            en caché de X, pero no la versión de memoria externa de X. Si la caché no se vacia en la memoria antes de
+            que otro dispositivo intente acceder a X, el dispositivo recibirá un valor caducado de X.
+            <h4>Transferencias</h4>
+            Durante las operaciones del DMA, el rendimiento del sistema puede verse afectado debido a que este
+            dispositivo hace un uso intensivo del bus y por lo tanto la CPU no puede leer datos de memoria. Esto provoca
+            que mientras el DMA está operando, la CPU debe esperar a que finalice dicha tarea sin ejecutar ninguna
+            instrucción. Para solventar esto, existe una memoria caché dentro de la CPU que permite a ésta seguir
+            trabajando mientras el DMA mantiene ocupado el bus.
+            </p>
+            <h3>Circuitos de temporización</h3>
+            <p>
+                Dispone de dos salidas al igual que un flip flop, una salida es la
+                inversa de la otra, el temporizador solamente posee un estado estable el otro es inestable, permanece en
+                su estado estable, hasta que se activa con un pulso de entrada, una vez que se
+                activa cambia a su estado inestable y ahí permanece por un periodo fijo de tiempo, este tiempo lo
+                determina una constante de tiempo RC externa que se conecta al temporizador, después de
+                que transcurre el tiempo tw, las salidas dos salidas del
+                temporizador regresan a su estado estable, hasta que se activan
+                otra vez.
+                <br><br>
+                La finalidad de la temporización es retardar el paso de una señal desde un nodo del circuito hasta otro
+                punto, el diseño de este circuito se realiza con un dispositivo que se conoce con el nombre de
+                “monoestable” ó “temporizador”, éste elemento electrónico dispone de una entrada y una salida, Se
+                dispone de dos tipos de comportamiento en que se manifiestan las salidas de los temporizadores,
+                "redisparables" y "no redisparables" y su entrada responde a dos tipos de disparo, "activación" y
+                "desactivación".
+            <h4>Estados de Espera</h4>
+            Cuando se conectan tarjetas al bus de la PC, un problema común es igualar la velocidad de los ciclos del bus
+            con la de las tarjetas. Es común que una tarjeta sea más lenta que el bus. Así, el bus de la PC esta
+            diseñado para resolver este problema. La señal READY del bus se puede usar para extender la longitud del
+            ciclo del bus para igualar una tarjeta lenta o parar el bus del sistema hasta que se sincronice con el ciclo
+            de la tarjeta.
+            </p>
+            <h3>Circuitos de control</h3>
+            <p>
+            <ul>
+                <li>
+                    Estos circuitos generan las señales de control específicas necesarias para ejecutar las
+                    instrucciones y
+                    administrar el flujo de datos dentro de la CPU y otras partes del sistema.
+                </li>
+                <li>
+                    Aseguran que las diferentes partes del sistema (memoria, ALU, registros, etc.) trabajen en conjunto
+                    de manera sincronizada.
+                </li>
+                <li>
+                    Los circuitos de control son los "cerebros detrás del cerebro", asegurando que la CPU y otros
+                    componentes hagan exactamente lo que se supone que deben hacer.
+                </li>
+                <li>
+                    Los circuitos de control a menudo se diseñan utilizando máquinas de estado finito, que realizan la
+                    transición entre diferentes estados según las entradas y generan las salidas correspondientes.
+                </li>
+                <li>
+                    En algunas CPU, la lógica de control se implementa utilizando microcódigo, un conjunto de
+                    instrucciones de bajo nivel que la CPU interpreta.
+                </li>
+            </ul>
+            <h4>Tipos</h4>
+            <ul>
+                <li>
+                    <b>Secuencial:</b> Las señales de control se activan en un orden específico, paso a paso.
+                </li>
+                <li>
+                    <b>Combinacional:</b> Las señales de control se generan a través de combinaciones lógicas,
+                    dependiendo del
+                    estado de las instrucciones.
+                </li>
+            </ul>
+            </p>
+            <h3>Controladores de video</h3>
+            <p>
+                Los Controladores de video son los responsables de generar la salida visual de la computadora, enviando
+                las señales adecuadas al monitor. Los controladores modernos suelen incluir una Unidad de Procesamiento
+                Gráfico (GPU), que acelera el procesamiento de gráficos y permite mostrar imágenes complejas y video de
+                alta resolución.
+            </p>
+            <hr>
+            <h2>Aplicaciones</h2>
+            <p>
+                En el contexto de la arquitectura de computadoras, las aplicaciones se refieren al conjunto
+                de programas y procesos que hacen uso de los recursos de hardware y software de una
+                computadora para realizar tareas específicas. Las aplicaciones pueden ser muy diversas y
+                van desde sistemas operativos hasta programas de procesamiento de textos,
+                navegadores web, videojuegos y software de diseño. Cada aplicación interactúa con la
+                computadora para cumplir su propósito, utilizando recursos como la CPU, memoria,
+                almacenamiento, y dispositivos de entrada y salida.
+            </p>
+            <h3>Entrada-Salida</h3>
+            <p>
+                Entrada/Salida (E/S) hace referencia al conjunto de dispositivos y técnicas que permiten a una
+                computadora interactuar con el mundo exterior, ya sea recibiendo datos (entrada) o enviándolos (salida).
+                Este proceso es crucial para que las aplicaciones puedan recibir información del usuario o de otros
+                sistemas y devolver resultados de manera comprensible.
+            <ul>
+                <li>Dispositivos de entrada</li>
+                <ul>
+                    <li>
+                        Son aquellos que permiten a los usuarios enviar información a la computadora, como teclado, el
+                        ratón, micrófonos, cámaras, escáneres, entre otros.
+                    </li>
+                </ul>
+                <li>Dispositivos de salida</li>
+                <ul>
+                    <li>
+                        Son los dispositivos que permiten a la computadora mostrar información al usuario, como
+                        pantallas, impresoras, altavoces, entre otros.
+                    </li>
+                </ul>
+            </ul>
+            <h4>Mecanismos de E/S</h4>
+            Los dispositivos de E/S están gestionados por el sistema operativo, que controla el flujo de datos entre la
+            CPU, los dispositivos y la memoria. Existen diferentes tipos de E/S, como la E/S Programada, la E/S con
+            interrupciones y la E/S con acceso directo a memoria (DMA). Cada uno tiene sus ventajas y desventajas
+            dependiendo de la eficiencia y el tipo de tarea que se está realizando.
+            <ul>
+                <li>
+                    E/S Programada
+                    <ul>
+                        <li>
+                            Ejemplo: Cuando un programa accede directamente a un dispositivo (como un teclado o un
+                            ratón) para leer datos, haciendo que la CPU espere hasta que el dispositivo esté listo para
+                            enviar los datos. Esto es sencillo, pero ineficiente, ya que la CPU puede perder tiempo
+                            esperando.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    E/S con interrupciones
+                    <ul>
+                        <li>
+                            Ejemplo: Si un usuario presiona una tecla en el teclado, el dispositivo de entrada
+                            interrumpe el flujo de trabajo de la CPU para informarle que hay datos disponibles. La CPU
+                            puede entonces leer los datos de manera eficiente sin tener que estar constantemente
+                            verificando si el dispositivo está listo, optimizando el uso del tiempo de procesamiento.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    E/S con Acceso Directo a la Memoria
+                    <ul>
+                        <li>
+                            Ejemplo: En un sistema de almacenamiento (como un disco duro), cuando se transfiere una gran
+                            cantidad de datos de manera continua a la memoria sin que la CPU esté directamente
+                            involucrada. Esto permite liberar a la CPU para otros procesos mientras se realiza la
+                            transferencia de datos, mejorando la eficiencia en tareas que requieren grandes volúmenes de
+                            datos, como en la edición de video.
+
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            </p>
+            <h3>Almacenamiento</h3>
+            <p>
+                El almacenamiento en informática se refiere a la capacidad de un sistema para retener datos e
+                información de forma persistente. A diferencia de la memoria principal (RAM), que es volátil y pierde su
+                contenido cuando se apaga la computadora, los dispositivos de almacenamiento conservan los datos incluso
+                cuando el sistema está apagado.
+                <br><br>
+                Los dispositivos de almacenamiento vienen en varias formas. Los discos duros (HDD) utilizan platos
+                giratorios y cabezales de lectura/escritura magnéticos para almacenar grandes cantidades de datos. Las
+                unidades de estado sólido (SSD) ofrecen un acceso más rápido a los datos al usar memoria flash en lugar
+                de partes móviles.
+                <br><br>
+                Además de los dispositivos internos, el almacenamiento también puede ser externo. Las unidades flash USB
+                y los discos duros externos proporcionan portabilidad, mientras que el almacenamiento en la nube utiliza
+                servidores remotos para guardar y acceder a los datos a través de Internet.
+                <br><br>
+                El almacenamiento es esencial para guardar el sistema operativo, los programas de software, los archivos
+                personales y cualquier otra información que la computadora necesite para funcionar.
+            </p>
+            <h3>Fuentes de alimentación</h3>
+            <p>
+                Las fuentes de alimentación son componentes críticos que suministran energía eléctrica a los demás
+                componentes de la computadora. Las computadoras requieren un suministro estable y regulado de energía
+                para operar correctamente.
+                <br><br>
+                Las fuentes de alimentación de las computadoras de escritorio típicamente convierten la corriente
+                alterna (CA) de la toma de corriente de la pared en corriente continua (CC), que es el tipo de energía
+                que utilizan los componentes internos de la computadora. Esta conversión implica reducir el voltaje y
+                estabilizar el flujo de corriente.
+                <br><br>
+                Las fuentes de alimentación tienen diferentes clasificaciones de potencia, medidas en vatios, que
+                indican la cantidad de energía que pueden suministrar. Es importante que la fuente de alimentación tenga
+                suficiente potencia para alimentar todos los componentes de la computadora, incluyendo la CPU, la
+                tarjeta gráfica y los discos duros.
+                <br><br>
+                Una fuente de alimentación inadecuada puede causar inestabilidad del sistema, fallos e incluso daños en
+                el hardware. Por lo tanto, elegir una fuente de alimentación confiable y con la potencia adecuada es
+                crucial para el funcionamiento seguro y estable de una computadora.
+            </p>
+            <hr>
+            <h2>Ambientes</h2>
+            <p>
+                El término "ambientes" en el contexto de la informática y los sistemas de computación se refiere a los
+                diferentes contextos y sectores en los que se aplican las tecnologías de la información. Las
+                computadoras y los sistemas informáticos son herramientas versátiles que se utilizan en una amplia
+                variedad de campos, cada uno con sus propias necesidades y requisitos específicos. A continuación, se
+                describen tres ambientes clave: Negocios, Industria y Comercio electrónico.
+            </p>
+            <h3>Negocios</h3>
+            <p>
+                El ambiente de negocios es uno de los principales impulsores de la adopción de la tecnología
+                informática. Las computadoras y los sistemas informáticos desempeñan un papel fundamental en casi todas
+                las funciones de una empresa moderna.
+                <br><br>
+                Las aplicaciones de negocios comunes incluyen el procesamiento de textos para la creación de documentos,
+                las hojas de cálculo para el análisis financiero y la gestión de datos, los sistemas de gestión de bases
+                de datos para almacenar y recuperar información de los clientes, los sistemas de planificación de
+                recursos empresariales (ERP) para integrar y automatizar los procesos de negocio, y el correo
+                electrónico y las herramientas de colaboración para la comunicación interna y externa.
+                <br><br>
+                Además, las computadoras se utilizan para la gestión de proyectos, la presentación de información, la
+                contabilidad, la gestión de recursos humanos y muchas otras tareas esenciales para el funcionamiento
+                eficiente de una empresa. La fiabilidad, la seguridad y la escalabilidad son consideraciones cruciales
+                en los sistemas informáticos utilizados en el entorno empresarial.
+            </p>
+            <h3>Industria</h3>
+            <p>
+                El ambiente industrial abarca la amplia gama de sectores involucrados en la producción de bienes y
+                servicios. Las computadoras y los sistemas informáticos se utilizan en la industria para automatizar
+                procesos, controlar maquinaria, diseñar productos y gestionar la cadena de suministro.
+                <br><br>
+                La automatización industrial utiliza computadoras y robots para realizar tareas de producción
+                repetitivas, aumentando la eficiencia y la precisión. Los sistemas de control supervisan y regulan
+                procesos complejos, como la refinación de petróleo o la generación de energía. El diseño asistido por
+                computadora (CAD) permite a los ingenieros crear modelos detallados de productos antes de la
+                fabricación. Los sistemas de gestión de la cadena de suministro rastrean el flujo de materiales y
+                productos desde los proveedores hasta los clientes.
+                <br><br>
+                En la industria, la robustez, la precisión y la capacidad de operar en entornos difíciles son
+                características importantes de los sistemas informáticos.
+            </p>
+            <h3>Comercio electronico</h3>
+            <p>
+                El comercio electrónico, o e-commerce, representa la compra y venta de bienes y servicios a través de
+                Internet. Este ambiente ha experimentado un crecimiento explosivo en las últimas décadas, transformando
+                la forma en que las empresas interactúan con los clientes.
+                <br><br>
+                Las plataformas de comercio electrónico permiten a las empresas crear tiendas en línea, mostrar
+                productos, procesar pagos y gestionar envíos. Los clientes pueden navegar por los productos, realizar
+                pedidos y pagar en línea, todo desde la comodidad de sus hogares.
+                <br><br>
+                El comercio electrónico abarca una amplia variedad de modelos de negocio, incluyendo el comercio
+                minorista en línea, las subastas en línea y los mercados en línea. La seguridad, la escalabilidad y la
+                facilidad de uso son factores críticos para el éxito de las plataformas de comercio electrónico.
+                <br><br>
+                Además de estos tres ambientes principales, las computadoras y los sistemas informáticos se utilizan en
+                muchos otros campos, como la educación, la atención médica, el gobierno, la investigación científica y
+                el entretenimiento. La versatilidad y la adaptabilidad de la tecnología informática la convierten en una
+                herramienta esencial en la sociedad moderna.
+            </p>
+        </article>
+    </main>
+    <footer>
+        <p>©Unidad 3</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Temario</a></li>
+                <li><a href="Unidad 1.html">Unidad 1</a></li>
+                <li><a href="Unidad 2.html">Unidad 2</a></li>
+                <li><a href="Unidad 4.html">Unidad 4</a></li>
+                <li><a href="Practicas.html">Prácticas</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>
